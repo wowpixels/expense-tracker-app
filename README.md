@@ -5,7 +5,7 @@
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
 The Budget App - which is built upon ReactJS - allows users to track their expenses.
-The following features are currently are under development:
+The following features are currently under development:
 
 - Create an account
 - Login in to your account
