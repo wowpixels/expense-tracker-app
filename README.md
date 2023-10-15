@@ -7,11 +7,11 @@
 The Expense Tracker App - which is built upon ReactJS - allows users to track their expenses.
 The following features are currently under development:
 
-[x] Create an account
-[] Login in to your account
-[] Add your information
-[] Track your expenses
-[] Log out of your account
+- Create an account
+- Login in to your account
+- Add your information
+- Track your expenses
+- Log out of your account
 
 ## Quick start
 
