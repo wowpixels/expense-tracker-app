@@ -9,7 +9,7 @@ const Nav = ({ userName }) => {
     <nav>
       <NavLink to="/" aria-label="Go to home">
         <img src={logo} height={30} alt="Budget App Logo" />
-        <span>HomeBudget</span>
+        <span>Expense Tracker</span>
       </NavLink>
       {userName && (
         <Form
@@ -22,7 +22,7 @@ const Nav = ({ userName }) => {
           }}
         >
           <button type="submit" className="btn btn--warning">
-            <span>Delete User</span>
+            <span>Delete your account</span>
             <TrashIcon width={20} />
           </button>
         </Form>

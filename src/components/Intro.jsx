@@ -11,11 +11,11 @@ const Intro = () => {
     <div className="intro">
       <div>
         <h1>
-          Take Control of <span className="accent">Your Money</span>
+          Keep your <span className="accent">Your Money</span> on track
         </h1>
         <p>
-          Personal budgeting is the secret to financial freedom. Start your
-          journey today.
+          Get more insights of your financial situation by tracking your money
+          flow. Let's kick-in today!
         </p>
         <Form method="post">
           <input
@@ -27,7 +27,7 @@ const Intro = () => {
             autoComplete="given-name"
           />
           <button type="submit" className="btn btn--dark">
-            <span>Create Account</span>
+            <span>Create an account</span>
             <UserPlusIcon width={20} />
           </button>
         </Form>
