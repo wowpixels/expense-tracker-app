@@ -1,8 +1,28 @@
-# React + Vite
+# Budget App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-Currently, two official plugins are available:
+The Budget App - which is built upon ReactJS - to track their expenses.
+The following features are currently are under development:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create an account
+- Login in to your account
+- Add your information
+- Track your expenses
+- Log out of your account
+
+## Quick start
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the app
+
+```bash
+npm run dev
+```
