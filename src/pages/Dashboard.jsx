@@ -1,5 +1,8 @@
-//
 import { useLoaderData } from "react-router-dom";
+import Intro from "../components/Intro";
+
+// libraries
+import { toast } from "react-toastify";
 
 // helper functions
 import { fetchData } from "../helpers";
@@ -10,14 +13,23 @@ export function dashboardLoader() {
   return { userName };
 }
 
+//action
+export async function dashboardAction({ request }) {
+  const data = await request.formData();
+  const formData = Object.fromEntries(data);
+  try {
+    localStorage.setItem("userName", JSON.stringify(formData.userName));
+    return toast.success(
+      `Welcome, ${formData.userName}! Your new account is ready 🚀`
+    );
+  } catch (error) {
+    throw new Error("Oops, there was a problem creating your account...");
+  }
+}
+
 const Dashboard = () => {
   const { userName } = useLoaderData();
-  return (
-    <div>
-      <h1>Hi {userName}!</h1>
-      {userName && "This is your Personal HomeBudget Dashboard"}
-    </div>
-  );
+  return <div>{userName ? <h1>Hi {userName}!</h1> : <Intro />}</div>;
 };
 
 export default Dashboard;
