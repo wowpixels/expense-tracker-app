@@ -11,11 +11,11 @@ const Intro = () => {
     <div className="intro">
       <div>
         <h1>
-          Keep your <span className="accent">Your Money</span> on track
+          Keep <span className="accent">your money</span> on track
         </h1>
         <p>
-          Get more insights of your financial situation by tracking your money
-          flow. Let's kick-in today!
+          Get more insights on your wallet by tracking your expenditures. Get
+          started today!
         </p>
         <Form method="post">
           <input
@@ -26,6 +26,8 @@ const Intro = () => {
             aria-label="Your Name"
             autoComplete="given-name"
           />
+          {/* use below hidden field to trigger the form action */}
+          <input type="hidden" name="_action" value="newUser" />
           <button type="submit" className="btn btn--dark">
             <span>Create an account</span>
             <UserPlusIcon width={20} />
