@@ -1,10 +1,23 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useFetcher } from "react-router-dom";
+
+// libraries
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
 const AddExpenseForm = ({ budgets }) => {
   const fetcher = useFetcher();
+  const isSubmitting = fetcher.state === "submitting";
   const formRef = useRef();
   const focusRef = useRef();
+
+  useEffect(() => {
+    if (!isSubmitting) {
+      // clear form
+      formRef.current.reset();
+      // reset focus
+      focusRef.current.focus();
+    }
+  }, [isSubmitting]);
 
   return (
     <div className="form-wrapper">
@@ -29,10 +42,11 @@ const AddExpenseForm = ({ budgets }) => {
             />
           </div>
           <div className="grid-xs">
-            <label htmlFor="newExpense">Expense Amount</label>
+            <label htmlFor="newExpenseAmount">Expense Amount</label>
             <input
               type="number"
               step="0.01"
+              min={0}
               inputMode="decimal"
               name="newExpenseAmount"
               id="newExpenseAmount"
@@ -41,6 +55,31 @@ const AddExpenseForm = ({ budgets }) => {
             />
           </div>
         </div>
+        <div className="grid-xs" hidden={budgets.length === 1}>
+          <label htmlFor="newExpenseBudget">Budget Category</label>
+          <select name="newExpenseBudget" id="newExpenseBudget" required>
+            {budgets
+              .sort((a, b) => a.createdAt - b.createdAt)
+              .map((budget) => {
+                return (
+                  <option value={budget.id} key={budget.id}>
+                    {budget.name}
+                  </option>
+                );
+              })}
+          </select>
+        </div>
+        <input type="hidden" name="_action" value="createExpense" />
+        <button type="submit" className="btn btn--dark" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <span>Creating Expense...</span>
+          ) : (
+            <>
+              <PlusCircleIcon width={20} />
+              <span>Create Expense</span>
+            </>
+          )}
+        </button>
       </fetcher.Form>
     </div>
   );

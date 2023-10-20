@@ -35,6 +35,7 @@ const AddBudgetForm = () => {
             name="newBudgetAmount"
             id="newBudgetAmount"
             placeholder="e.g. €150"
+            min={0}
             required
             inputMode="decimal"
           />

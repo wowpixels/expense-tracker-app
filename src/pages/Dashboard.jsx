@@ -9,7 +9,7 @@ import AddExpenseForm from "../components/AddExpenseForm";
 import { toast } from "react-toastify";
 
 // helper functions
-import { createBudget, fetchData, waait } from "../helpers";
+import { createBudget, createExpense, fetchData, waait } from "../helpers";
 
 // loader
 export function dashboardLoader() {
@@ -42,6 +42,20 @@ export async function dashboardAction({ request }) {
       return toast.success("Budget created!");
     } catch (error) {
       throw new Error("There was a problem creating your budget...");
+    }
+  }
+
+  if (_action === "createExpense") {
+    try {
+      // create an expense
+      createExpense({
+        name: values.newExpense,
+        amount: values.newExpenseAmount,
+        budgetId: values.newExpenseBudget,
+      });
+      return toast.success(`Expense ${values.newExpense} created!`);
+    } catch (error) {
+      throw new Error("There was a problem creating your expense...");
     }
   }
 }
