@@ -36,7 +36,7 @@ const AddExpenseForm = ({ budgets }) => {
               type="text"
               name="newExpense"
               id="newExpense"
-              placeholder="e.g. Coffee"
+              placeholder="Maybe, Coffee?"
               ref={focusRef}
               required
             />
@@ -50,7 +50,7 @@ const AddExpenseForm = ({ budgets }) => {
               inputMode="decimal"
               name="newExpenseAmount"
               id="newExpenseAmount"
-              placeholder="e.g. €2.50"
+              placeholder="e.g. 2,50"
               required
             />
           </div>

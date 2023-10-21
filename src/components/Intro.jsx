@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom";
+import { Form, useFetcher } from "react-router-dom";
 
 // libraries
 import { UserPlusIcon } from "@heroicons/react/24/solid";
@@ -7,6 +7,9 @@ import { UserPlusIcon } from "@heroicons/react/24/solid";
 import GraphPerson from "../assets/graph-person.jpg";
 
 const Intro = () => {
+  const fetcher = useFetcher();
+  const isSubmitting = fetcher.state === "submitting";
+
   return (
     <div className="intro">
       <div>
@@ -28,9 +31,19 @@ const Intro = () => {
           />
           {/* use below hidden field to trigger the form action */}
           <input type="hidden" name="_action" value="newUser" />
-          <button type="submit" className="btn btn--dark">
-            <span>Create an account</span>
-            <UserPlusIcon width={20} />
+          <button
+            type="submit"
+            className="btn btn--dark"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <span>Creating Account...</span>
+            ) : (
+              <>
+                <UserPlusIcon width={20} />
+                <span>Create an account</span>
+              </>
+            )}
           </button>
         </Form>
       </div>

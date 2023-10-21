@@ -24,17 +24,17 @@ const AddBudgetForm = () => {
             type="text"
             name="newBudget"
             id="newBudget"
-            placeholder="e.g. Groceries"
+            placeholder="For example, Groceries?"
             ref={focusRef}
           />
         </div>
         <div className="grid-xs">
-          <label htmlFor="newBudgetAmount">Budget Name Amount</label>
+          <label htmlFor="newBudgetAmount">Budget Amount</label>
           <input
             type="number"
             name="newBudgetAmount"
             id="newBudgetAmount"
-            placeholder="e.g. €150"
+            placeholder="e.g. 99,50"
             min={0}
             required
             inputMode="decimal"
